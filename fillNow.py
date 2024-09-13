@@ -84,7 +84,7 @@ def FillNow():
         st.dataframe(new_row)
         st.write("Records shape : ", new_row.shape)
         if st.button('Update'):
-            updated_df = pd.concat([df, row], ignore_index=True)
+            updated_df = pd.concat([df, new_row], ignore_index=True)
             updated_df.drop_duplicates(inplace=True)
             # updating original file
             updated_df.to_excel("ADBLUE_NEW_SHEET.xlsx", index=False, engine='openpyxl')
