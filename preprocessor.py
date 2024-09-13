@@ -1,8 +1,7 @@
 import pandas as pd
 
-df = pd.read_excel("ADBLUE_NEW_SHEET.xlsx")
-
 def preprocess():
+    df = pd.read_excel("ADBLUE_NEW_SHEET.xlsx")
     # preprocess
     df_cleaned = df.loc[:, ~df.columns.str.contains('^Unnamed')]
     df_cleaned.drop_duplicates(inplace=True)
