@@ -56,7 +56,7 @@ def updateOneRecord():
             if st.button('Update'):
                 st.write('Record updated successfully!')
                 df = df.drop(df[(df['Vehicle no'] == vNumber) & (df['Date'] == date)].index)
-                df = df.append(new_df, ignore_index=True)
+                df = pd.concat([df, new_df], ignore_index=True)
                 df.to_excel('ADBLUE_NEW_SHEET.xlsx', index=False, engine='openpyxl')
                 df_filtered = df[df['Vehicle no'] == vNumber]
                 st.dataframe(df_filtered)
