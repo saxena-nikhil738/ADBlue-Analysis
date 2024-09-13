@@ -88,6 +88,7 @@ def FillNow():
             updated_df.drop_duplicates(inplace=True)
             # updating original file
             updated_df.to_excel("ADBLUE_NEW_SHEET.xlsx", index=False, engine='openpyxl')
+            st.write('New filling record added!')
             st.dataframe(updated_df)
             st.write('Record shape', updated_df.shape)
 
